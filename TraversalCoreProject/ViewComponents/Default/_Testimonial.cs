@@ -10,10 +10,10 @@ namespace TraversalCoreProject.ViewComponents.Default
 {
     public class _Testimonial : ViewComponent
     {
-        SubAboutManager _subAboutManager = new SubAboutManager(new EfSubAboutDal());
+        TestimonialManager _testimonialManager = new TestimonialManager(new EfTestimonialDal());
         public IViewComponentResult Invoke()
         {
-            var values = _subAboutManager.GetList();
+            var values = _testimonialManager.GetList();
             return View(values);
         }
     }
