@@ -8,13 +8,12 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace TraversalCoreProject.ViewComponents.Default
 {
-    public partial class _Feature : ViewComponent
+    public class _SubAbout : ViewComponent
     {
-        FeatureManager _featureManager = new FeatureManager(new EfFeatureDal());
-
+        SubAboutManager _subAboutManager = new SubAboutManager(new EfSubAboutDal());
         public IViewComponentResult Invoke()
         {
-            var values = _featureManager.GetList();
+            var values = _subAboutManager.GetList();
             return View(values);
         }
     }
