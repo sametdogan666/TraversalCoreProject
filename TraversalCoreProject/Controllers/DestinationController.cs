@@ -7,6 +7,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using BusinessLayer.Concrete;
 using DataAccessLayer.EntityFramework;
+using EntityLayer.Concrete;
 using TraversalCoreProject.Models;
 
 namespace TraversalCoreProject.Controllers
@@ -19,6 +20,15 @@ namespace TraversalCoreProject.Controllers
             var values = _destinationManager.GetList();
             return View(values);
         }
-
+        [HttpGet]
+        public IActionResult DestinationDetails(int id)
+        {
+            return View();
+        }
+        [HttpPost]
+        public IActionResult DestinatonDetails(Destination destination)
+        {
+            return View();
+        }
     }
 }
